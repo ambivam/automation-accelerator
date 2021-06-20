@@ -13,12 +13,12 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
+
 
 @Configuration
+@Profile("!remote")
 public class WebDriverConfig {
-
-    @Value("${default.timeout:30}")
-    private int timeout;
 
     @Bean
     @ConditionalOnProperty(name="browser",havingValue = "chrome")
@@ -44,13 +44,10 @@ public class WebDriverConfig {
     @Bean
     @ConditionalOnMissingBean
     public WebDriver safariDriver(){
-        WebDriverManager.edgedriver().setup();
-        return new EdgeDriver();
+        WebDriverManager.chromedriver().setup();
+        return new ChromeDriver();
     }
 
-    @Bean
-    public WebDriverWait webDriverWait(WebDriver driver){
-        return new WebDriverWait(driver,this.timeout);
-    }
+
 
 }
