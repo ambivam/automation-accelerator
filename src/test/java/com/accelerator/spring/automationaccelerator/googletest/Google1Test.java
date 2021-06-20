@@ -12,8 +12,9 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class GoogleTest extends SpringBaseTestNGTest {
+public class Google1Test extends SpringBaseTestNGTest {
 
+    @Lazy
     @Autowired
     private GooglePage googlePage;
 
@@ -27,10 +28,8 @@ public class GoogleTest extends SpringBaseTestNGTest {
         this.googlePage.goTo();
         Assert.assertTrue(this.googlePage.isAt());
 
-        Uninterruptibles.sleepUninterruptibly(3, TimeUnit.SECONDS);
 
-
-        this.googlePage.getSearchComponent().search("environment ");
+        this.googlePage.getSearchComponent().search("spring boot");
         Assert.assertTrue(this.googlePage.getSearchResult().isAt());
         Assert.assertTrue(this.googlePage.getSearchResult().getCount() > 2);
 
