@@ -1,5 +1,6 @@
 package com.accelerator.spring.automationaccelerator.util;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -23,12 +24,15 @@ public class ScreenShotUtil {
     @Value("${screenshot.path}")
     private Path path;
 
-    @Value("${screenshot.path}/img.png")
+    @Value("${screenshot.path}")
     private Path pathDefault;
 
-    public void takeScreenShot(final String imgName) throws IOException {
+    @Autowired
+    private Faker faker;
+
+    public void takeScreenShot() throws IOException {
         File sourceFile = this.driver.getScreenshotAs(OutputType.FILE);
-        FileCopyUtils.copy(sourceFile,this.path.resolve(imgName).toFile());
+        FileCopyUtils.copy(sourceFile,this.path.resolve(faker.name().firstName() + ".png").toFile());
     }
 
     public void takeScreenShotDPath() throws IOException {

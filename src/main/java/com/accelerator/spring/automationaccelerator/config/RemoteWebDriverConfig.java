@@ -1,5 +1,6 @@
 package com.accelerator.spring.automationaccelerator.config;
 
+import com.accelerator.spring.automationaccelerator.annotations.LazyConfiguration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -14,8 +15,7 @@ import org.springframework.context.annotation.Profile;
 
 import java.net.URL;
 
-@Lazy
-@Configuration
+@LazyConfiguration
 @Profile("remote")
 public class RemoteWebDriverConfig {
 
