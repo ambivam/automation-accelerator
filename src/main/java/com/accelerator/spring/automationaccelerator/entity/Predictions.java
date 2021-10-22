@@ -26,5 +26,7 @@ public class Predictions {
     private String teststeps;*/
     private String predictions;
     private Double probabilityfailure;
+    /*private String testcases;*/
+
 
 }

@@ -5,10 +5,12 @@ import com.accelerator.spring.automationaccelerator.repository.PredictionsReposi
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DBOperationRunner implements CommandLineRunner {
+@Profile("!dbsuite")
+public class MigrateExcelToDBRunner implements CommandLineRunner {
 
     @Autowired
     PredictionsRepository eRepo;
@@ -21,6 +23,7 @@ public class DBOperationRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        System.out.println("Executing MigrateExcelToDBRunner");
         eRepo.saveAll(predictioResults.readPredictionsFromExcel(fileName));
     }
 

@@ -18,8 +18,6 @@ import java.util.Vector;
 public class PredictionResults {
 
 
-
-
     public List<Predictions> readPredictionsFromExcel(String fileName){
         Vector dataHolder=read(fileName);
         return saveToDatabase(dataHolder);
@@ -56,6 +54,7 @@ public class PredictionResults {
         String teststeps = "";
         Double probabilityfailure = 0.0;
         String predictions = "";
+        /*String testcases = "";*/
 
         List<Predictions> predictionResultsList = new ArrayList<Predictions>();
         int loopIter = 0;
