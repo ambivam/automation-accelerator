@@ -9,7 +9,8 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
-@Profile("!dbsuite")
+//@Profile("!dbsuite")
+@Profile("exceldb")
 public class MigrateExcelToDBRunner implements CommandLineRunner {
 
     @Autowired

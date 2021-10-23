@@ -5,12 +5,11 @@ import com.accelerator.spring.automationaccelerator.config.page.google.GooglePag
 import com.accelerator.spring.automationaccelerator.util.ScreenShotUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class Google2Test extends SpringBaseTestNGTest {
+public class USID_012_TC034 extends SpringBaseTestNGTest {
 
     @Lazy
     @Autowired
@@ -20,17 +19,10 @@ public class Google2Test extends SpringBaseTestNGTest {
     @Autowired
     private ScreenShotUtil screenShotUtil;
 
-
     @Test
     public void googleTest() throws IOException {
         this.googlePage.goTo();
-        Assert.assertTrue(this.googlePage.isAt());
-        this.googlePage.getSearchComponent().search("selenium");
-        Assert.assertTrue(this.googlePage.getSearchResult().isAt());
-        Assert.assertTrue(this.googlePage.getSearchResult().getCount() > 2);
-        this.screenShotUtil.takeScreenShot();
-        this.googlePage.close();
-        //this.screenShotUtil.takeScreenShot("temp.png");
+
 
     }
 }

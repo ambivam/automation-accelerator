@@ -6,6 +6,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.io.FileInputStream;
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.Vector;
 
 @Component
+@Profile("exceldb")
 public class PredictionResults {
 
 

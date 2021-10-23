@@ -42,7 +42,7 @@ public class CreatePredictedSuite {
         TestNG myTestNG = new TestNG();
         XmlSuite mySuite = new XmlSuite();
         mySuite.setName(suiteName);
-        mySuite.setParallel(XmlSuite.ParallelMode.TESTS);
+        mySuite.setParallel(XmlSuite.ParallelMode.CLASSES);
 
         XmlTest myTest = new XmlTest(mySuite);
         myTest.setName(suiteName);
@@ -52,7 +52,7 @@ public class CreatePredictedSuite {
 
         for(Predictions prediction : tcList ){
             try{
-                if(loopIndex == 0){
+                if(loopIndex == 0 || loopIndex == 1){
                     String temp = "com.accelerator.spring.automationaccelerator.googletest."+prediction.getUsid()+"_"+prediction.getTcid();
                     //String temp = "com.accelerator.spring.automationaccelerator.googletest.Google2Test";
                     System.out.println("Created class is "+temp);
