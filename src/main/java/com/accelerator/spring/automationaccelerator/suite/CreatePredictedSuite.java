@@ -33,7 +33,7 @@ public class CreatePredictedSuite {
     public void createPredictedTestSuite(){
         List<Predictions> tcList = eRepo.findByProbabilityfailureGreaterThan(probabilityFailure);
 
-        /*System.out.println("first row create testcase is "+predictions.getUsid()+"_"+predictions.getTcid());*/
+        System.out.println("first row create testcase is "+tcList.get(0).getUsid()+"_"+tcList.get(0).getTcid());
         createSuite(tcList);
     }
 
