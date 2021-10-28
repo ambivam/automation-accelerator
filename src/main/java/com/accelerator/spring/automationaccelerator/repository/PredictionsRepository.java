@@ -2,7 +2,6 @@ package com.accelerator.spring.automationaccelerator.repository;
 
 import com.accelerator.spring.automationaccelerator.entity.Predictions;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
