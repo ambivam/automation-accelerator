@@ -24,11 +24,12 @@ public class ExecutionSummary {
     private String os;
     private String osversion;
     private String status;
-    @Id
+    /*@Id*/
     private String build;
 
     private String module;
     @CreationTimestamp
     @Column(name="executeddate ", nullable = false, updatable = false, insertable = false)
+    @Id
     private Timestamp executeddate;
 }
