@@ -55,6 +55,11 @@ public class CreatePredictedSuite {
                 if(loopIndex == 0 || loopIndex == 1){
                     String temp = "com.accelerator.spring.automationaccelerator.googletest."+prediction.getUsid()+"_"+prediction.getTcid();
                     //String temp = "com.accelerator.spring.automationaccelerator.googletest.Google2Test";
+                    //@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#
+                    myTest.getClasses().add(new XmlClass(temp));
+                    //@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#
+
+
                     System.out.println("Created class is "+temp);
                     myClasses.add(new XmlClass(temp));
                 }

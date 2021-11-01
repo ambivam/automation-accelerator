@@ -23,7 +23,7 @@ public class Suite {
         return parallel;
     }
 
-    @XmlAttribute(name="test")
+    /*@XmlAttribute(name="test")*/
     public String getTest() {
         return test;
     }
