@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Profile;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -37,13 +38,16 @@ public class USID_012_TC033 extends SpringBaseTestNGTest {
             this.googlePage.goTo();
         }catch(Exception e){
             System.out.println("into exception");
-            this.reportUtil.ReportInfo("TC03","TESTCASE SMOKE","RUNNING SMOKE","FAIL");
+            this.reportUtil.ReportInfo("TC023","TESTCASE SMOKE","RUNNING SMOKE","FAIL");
 
         }
         System.out.println("before pass");
-        this.reportUtil.ReportInfo("TC03","TESTCASE SMOKE","RUNNING SMOKE","PASS");
+        this.reportUtil.ReportInfo("TC023","TESTCASE SMOKE","RUNNING SMOKE","PASS");
         System.out.println("after pass");
+    }
 
-
+    @AfterClass
+    public void closeBrowser(){
+        this.googlePage.close();
     }
 }

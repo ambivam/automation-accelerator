@@ -17,6 +17,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 public class ExecutionSummary {
 
+    @Id
     private String tcid;
     private String testcasetitle;
     private String browser;
@@ -28,8 +29,9 @@ public class ExecutionSummary {
     private String build;
 
     private String module;
-    @CreationTimestamp
-    @Column(name="executeddate ", nullable = false, updatable = false, insertable = false)
-    @Id
+    /*@CreationTimestamp
+    @Column(name="executeddate ", nullable = false, updatable = true, insertable = true)*/
+    /*@Id*/
+    @Column(name="executeddate")
     private Timestamp executeddate;
 }

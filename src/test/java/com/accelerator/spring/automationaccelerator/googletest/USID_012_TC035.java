@@ -5,7 +5,6 @@ import com.accelerator.spring.automationaccelerator.config.page.google.GooglePag
 import com.accelerator.spring.automationaccelerator.util.ReportUtil;
 import com.accelerator.spring.automationaccelerator.util.ScreenShotUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Lazy;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
@@ -14,7 +13,7 @@ import java.io.IOException;
 import java.sql.Timestamp;
 
 @Lazy
-public class USID_012_TC034 extends SpringBaseTestNGTest {
+public class USID_012_TC035 extends SpringBaseTestNGTest {
 
     /*browser=chrome
             browserversion=70
@@ -45,7 +44,7 @@ public class USID_012_TC034 extends SpringBaseTestNGTest {
 
         this.googlePage.goTo();
         display("Into test methods and the time is "+timestamp.getTime());
-        this.reportUtil.ReportSummary(timestamp,"TC21","TESTING SUMMARY INFO","CHROME","71.1","WINDOWS",
+        this.reportUtil.ReportSummary(timestamp,"TC22","TESTING SUMMARY INFO","CHROME","71.1","WINDOWS",
                 "WIN10","PASS","1.0.1","BACKEND");
 
     }
