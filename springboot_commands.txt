@@ -1,0 +1,60 @@
+mvn clean test -Dbrowser=chrome
+
+mvn clean test -Dspring.profiles.active=qa -Dbrowser=firefox
+
+mvn clean test -Dspring.profiles.active=qa,stg -Dbrowser=firefox
+mvn clean test -Dspring.profiles.active=remote -Dbrowser=firefox
+
+
+select concat(c.firstname, ' ', c.lastname) as fullname from Contact c
+
+'USID_012_TC033'
+
+com.accelerator.spring.automationaccelerator.googletest.USID_012_TC033
+
+
+
+mvn spring-boot:run -Dspring-boot.run.profiles=dbsuite clean test -DskipTests
+
+mvn -Dmaven.test.skip.exec=true spring-boot:run -Dspring-boot.run.profiles=dbsuite
+
+
+mvn spring-boot:run -Dspring-boot.run.profiles=dev clean test -DskipTests
+
+
+mvn clean test -DskipTests spring-boot:run -Dspring-boot.run.profiles=dbsuite 
+
+
+mvn clean spring-boot:run -Dspring-boot.run.profiles=exceldb
+
+mvn clean -Dmaven.test.skip.exec=true spring-boot:run -Dspring-boot.run.profiles=dbsuite
+
+
+mvn -Dspring.profiles.active=dbsuite clean test spring-boot:run -Dspring-boot.run.profiles=dbsuite
+
+mvn -Dspring.profiles.active=dbsuite clean compile spring-boot:run -Dspring-boot.run.profiles=dbsuite
+
+mvn -Dspring.profiles.active=dbsuite clean -Dmaven.test.skip.exec=true spring-boot:run -Dspring-boot.run.profiles=dbsuite
+
+mvn clean -DskipTests package -Dspring.profiles.active=dbsuite spring-boot:run -Dspring-boot.run.profiles=dbsuite
+
+mvn clean -DskipTests -Dspring.profiles.active=dbsuite spring-boot:run -Dspring-boot.run.profiles=dbsuite
+
+
+mvn -Dspring.profiles.active=dev clean test -DsuiteXmlFile=suites/predictions_suite.xml
+
+mvn -Dspring.profiles.active=dbsuite spring-boot:run -Dspring-boot.run.profiles=dbsuite test
+
+mvn clean -Dspring.profiles.active=dbsuite spring-boot:run -Dspring-boot.run.profiles=dbsuite test -DsuiteXmlFile=suites/predictions_suite.xml
+
+-------------------------------------------commenting testng xml file configuration ---------------------------------
+mvn clean -DskipTests -Dsuite.xml=suites/predictions_suite.xml package -Dspring.profiles.active=dbsuite spring-boot:run -Dspring-boot.run.profiles=dbsuite
+
+mvn clean -DskipTests -Dsuite.xml=suites/predictions_suite.xml verify -Dspring.profiles.active=dbsuite spring-boot:run -Dspring-boot.run.profiles=dbsuite
+
+mvn -Dspring.profiles.active=dbsuite spring-boot:run -Dspring-boot.run.profiles=dbsuite test
+---------------------------------------------------------------------------------------------------------------------
+mvn clean -DskipTests verify -Dspring.profiles.active=dbsuite spring-boot:run -Dspring-boot.run.profiles=dbsuite
+
+mvn -Dspring.profiles.active=dbsuite spring-boot:run -Dspring-boot.run.profiles=dbsuite test
+
